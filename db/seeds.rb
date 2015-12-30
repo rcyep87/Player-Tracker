@@ -1,5 +1,6 @@
 Team.create({
-      name: "Houston Astros"
+      name: "Houston Astros",
+      general_manager: "Jeff Luhnow"
   })
 
 Player.create({
