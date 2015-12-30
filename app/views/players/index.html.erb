@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Players</h1>
+<h1 class="playersindexh1">Players Database</h1>
+
 <div class="table-responsive">
   <table class="table">
     <thead>
@@ -14,6 +15,7 @@
         <th>Bats</th>
         <th>Throws</th>
         <th>Height</th>
+        <th>Organization</th>
         <th colspan="3"></th>
       </tr>
     </thead>
@@ -30,6 +32,7 @@
           <td><%= player.bats %></td>
           <td><%= player.throws %></td>
           <td><%= player.height %></td>
+          <td><%= link_to player.team.name, player.team   %></td>
           <td><%= link_to 'Show', player %></td>
           <td><%= link_to 'Edit', edit_player_path(player) %></td>
           <td><%= link_to 'Destroy', player, method: :delete, data: { confirm: 'Are you sure?' } %></td>
