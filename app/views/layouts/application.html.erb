@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>PlayerTracker</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
+  <head>
+    <title>PlayerTracker</title>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
 
-<ul class="nav nav-tabs">
-  <li role="presentation" class="active"><a href="#">Home</a></li>
-  <li role="presentation"><a href="#">Profile</a></li>
-  <li role="presentation"><a href="#">Messages</a></li>
-</ul>
+    <%= csrf_meta_tags %>
+  </head>
 
-<body>
+  <ul class="nav nav-tabs">
+    <li role="presentation"><%= link_to "Dashboard", root_path %></li>
+    <li role="presentation"><%= link_to "Players", players_path %></li>
+    <li role="presentation"><%= link_to "Teams", teams_path %></li>
+  </ul>
 
-<%= yield %>
-
-</body>
+  <body>
+    <div class="container">
+      <%= yield %>
+    </div>
+  </body>
+  <%= javascript_include_tag 'application' %>
 </html>
