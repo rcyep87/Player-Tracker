@@ -4,7 +4,7 @@ Team.create({
   })
 
 Team.create({
-    name: "St. Louis Cardinals"
+    name: "St. Louis Cardinals",
     general_manager: "John Mozeliak"
   })
 
@@ -190,6 +190,45 @@ Player.create({
   })
 
 Player.create({
+
+      first_name: "Will",
+      last_name:  "Harris",
+      DOB:        "1984-08-28",
+      position:   "P",
+      college:    "Louisiana State",
+      debut:      "2012-08-13",
+      throws:     "Right",
+      team_id:    1
+
+  })
+
+Player.create({
+
+      first_name: "Collin",
+      last_name:  "McHugh",
+      DOB:        "1987-06-19",
+      position:   "P",
+      college:    "Berry, GA",
+      debut:      "2012-08-23",
+      throws:     "Right",
+      team_id:    1
+
+  })
+
+Player.create({
+
+      first_name: "Tony",
+      last_name:  "Sipp",
+      DOB:        "1983-07-12",
+      position:   "P",
+      college:    "Clemson",
+      debut:      "2009-04-22",
+      throws:     "Left",
+      team_id:    1
+
+  })
+
+Player.create({
       first_name: "Michael",
       last_name:  "Wacha",
       DOB:        "1991-07-01",
@@ -198,4 +237,28 @@ Player.create({
       debut:      "2013-05-13",
       throws:     "Right",
       team_id:    2
+  })
+
+Player.create({
+      first_name: "Adam",
+      last_name:  "Wainwright",
+      DOB:        "1981-08-30",
+      position:   "SP",
+      college:    "N/A",
+      debut:      "2005-07-11",
+      throws:     "Right",
+      team_id:    2
+  })
+
+Player.create({
+
+      first_name: "Trevor",
+      last_name:  "Rosenthal",
+      DOB:        "1990-05-29",
+      position:   "P",
+      college:    "Cowley County CC",
+      debut:      "2012-07-18",
+      throws:     "Right",
+      team_id:    2
+
   })
