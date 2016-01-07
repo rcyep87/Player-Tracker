@@ -4,8 +4,6 @@ class PlayersController < ApplicationController
   # GET /players
   # GET /players.json
   def index
-
-
     if params[:search]
       @search_player = Player.search(params[:search]).order("last_name DESC")
     else

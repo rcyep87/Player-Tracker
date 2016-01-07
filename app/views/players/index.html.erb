@@ -2,7 +2,7 @@
 
 <%= form_tag(players_path, method: "get") do %>
   <%= label_tag(:search, "Search for player:") %>
-  <%= text_field_tag(:search, params[:search]) %>
+  <%= text_field_tag(:search, params[:search], placeholder: "Search by First Name") %>
   <%= submit_tag("Search") %>
 <% end %>
 
@@ -39,12 +39,16 @@
             <td><%= player.bats %></td>
             <td><%= player.throws %></td>
             <td><%= player.height %></td>
-            <td><%= link_to player.team.name, player.team   %></td>
+            <td><%= link_to player.team.name, player.team %></td>
             <td><%= link_to 'Show', player %></td>
             <td><%= link_to 'Edit', edit_player_path(player) %></td>
             <td><%= link_to 'Destroy', player, method: :delete, data: { confirm: 'Are you sure?' } %></td>
           </tr>
         <% end %>
+      <% elsif @search_player.empty? %>
+        <tr>
+          <td><%= "Player not found!" %></td>
+        <tr>
       <% else %>
         <% @search_player.each do |player| %>
           <tr>
@@ -57,7 +61,10 @@
             <td><%= player.bats %></td>
             <td><%= player.throws %></td>
             <td><%= player.height %></td>
-            <td><%= link_to player.team.name, player.team   %></td>
+            <td><%= link_to player.team.name, player.team %></td>
+            <td><%= link_to 'Show', player %></td>
+            <td><%= link_to 'Edit', edit_player_path(player) %></td>
+            <td><%= link_to 'Destroy', player, method: :delete, data: { confirm: 'Are you sure?' } %></td>
           </tr>
         <% end %>
       <% end %>
