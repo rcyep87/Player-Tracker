@@ -14,7 +14,7 @@
       <tr>
         <th>First name</th>
         <th>Last name</th>
-        <th>Dob</th>
+        <th>DOB</th>
         <th>Position</th>
         <th>College</th>
         <th>Debut</th>
@@ -25,8 +25,9 @@
         <th colspan="3"></th>
       </tr>
     </thead>
-    <% if @search_player.nil? %>
+
       <tbody>
+      <% if @search_player.nil? %>
         <% @players.each do |player| %>
           <tr>
             <td><%= link_to player.first_name, player %></td>
@@ -44,13 +45,24 @@
             <td><%= link_to 'Destroy', player, method: :delete, data: { confirm: 'Are you sure?' } %></td>
           </tr>
         <% end %>
-      </tbody>
       <% else %>
         <% @search_player.each do |player| %>
-          <%= link_to player.first_name, player %>
-          <%= link_to player.last_name,  player %>
+          <tr>
+            <td><%= link_to player.first_name, player %></td>
+            <td><%= link_to player.last_name,  player %></td>
+            <td><%= link_to player.DOB,        player %></td>
+            <td><%= player.position %></td>
+            <td><%= player.college %></td>
+            <td><%= player.debut %></td>
+            <td><%= player.bats %></td>
+            <td><%= player.throws %></td>
+            <td><%= player.height %></td>
+            <td><%= link_to player.team.name, player.team   %></td>
+          </tr>
         <% end %>
-    <% end %>
+      <% end %>
+      </tbody>
+
   </table>
 </div>
 
