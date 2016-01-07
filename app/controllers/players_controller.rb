@@ -5,7 +5,7 @@ class PlayersController < ApplicationController
   # GET /players.json
   def index
     if params[:search]
-      @search_player = Player.search(params[:search]).order("last_name DESC")
+      @search_player = Player.search(params[:search]).order("last_name ASC")
     else
       @players = Player.all
     end
